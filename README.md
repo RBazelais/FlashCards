@@ -42,11 +42,9 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='/assets/Flashcard1_rbazelais.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
+![Video Walkthrough](./src/assets/Flashcard1_rbazelais.gif "Video Walkthrough")
 
 GIF created with ...  LICEcap
-
 
 ## Notes
 
