@@ -64,16 +64,16 @@ const Card = ({
 						onClick={(e) => e.stopPropagation()}
 					>
 						<button
-							className="known-button"
+							className="unknown-button"
 							onClick={() => onReviewChange(true)}
 						>
-							I Know This
+							Needs Review
 						</button>
 						<button
-							className="unknown-button"
+							className="known-button"
 							onClick={() => onReviewChange(false)}
 						>
-							Needs Review
+							I Know This
 						</button>
 					</div>
 				</div>

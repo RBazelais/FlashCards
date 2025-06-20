@@ -1,6 +1,6 @@
 # React + Vite
 
-# Web Development Project 2 - Groove Deck
+# Web Development Project 2 - Flash Deck
 
 Submitted by: Rachel Bazelais
 
@@ -12,8 +12,8 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is completed:
 
-- [ ] **The app displays the title of the card set, a short description, and the total number of cards**
-  - [ ] Title of card set is displayed 
+- [x] **The app displays the title of the card set, a short description, and the total number of cards**
+  - [x] Title of card set is displayed 
   - [x] A short description of the card set is displayed 
   - [x] A list of card pairs is created
   - [x] The total number of cards in the set is displayed 
@@ -36,20 +36,17 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
+* [ ] Added a way to track if you know the card or not
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='/assets/Flashcard1_rbazelais.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-<!-- Replace this with whatever GIF tool you used! -->
+
 GIF created with ...  LICEcap
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+
 
 ## Notes
 
