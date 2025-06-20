@@ -1,15 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Card.css";
 
-const Card = ({ difficulty, question, answer, onReviewChange }) => {
+const Card = ({
+	difficulty,
+	question,
+	answer,
+	onReviewChange,
+	ShowFront,
+	setShowFront,
+}) => {
 	const [isFlipped, setIsFlipped] = useState(false);
+
+	useEffect(() => {
+		if (ShowFront) {
+			setIsFlipped(false);
+			setShowFront(false);
+		}
+	}, [ShowFront, setShowFront]);
 
 	const handleFlip = () => {
 		setIsFlipped(!isFlipped);
-	};
-
-	const handleResponse = (response) => {
-		onReviewChange(!response); // If known (true), don't need review (false)
 	};
 
 	const getDifficultyColor = () => {
@@ -42,6 +52,12 @@ const Card = ({ difficulty, question, answer, onReviewChange }) => {
 					<p className="hint">Click to reveal answer</p>
 				</div>
 				<div className="card-back">
+					<span
+						className="difficulty"
+						style={{ backgroundColor: getDifficultyColor() }}
+					>
+						{difficulty}
+					</span>
 					<h3 className="answer">{answer}</h3>
 					<div
 						className="response-buttons"
@@ -49,13 +65,13 @@ const Card = ({ difficulty, question, answer, onReviewChange }) => {
 					>
 						<button
 							className="known-button"
-							onClick={() => handleResponse(true)}
+							onClick={() => onReviewChange(true)}
 						>
 							I Know This
 						</button>
 						<button
 							className="unknown-button"
-							onClick={() => handleResponse(false)}
+							onClick={() => onReviewChange(false)}
 						>
 							Needs Review
 						</button>

@@ -26,7 +26,7 @@ html, body {
 	margin: 0 auto;
 }
 
-h1 {
+header {
 	color: #fff;
 }
 
@@ -52,7 +52,3 @@ h1 {
 	background-color: #0b7dda;
 }
 
-.next-button:disabled {
-	background-color: #cccccc;
-	cursor: not-allowed;
-}
