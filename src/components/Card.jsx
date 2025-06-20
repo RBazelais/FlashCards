@@ -1,19 +1,67 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import "./Card.css";
 
-const Card = ({ front, back }) => {
+const Card = ({ difficulty, question, answer, onReviewChange }) => {
 	const [isFlipped, setIsFlipped] = useState(false);
 
 	const handleFlip = () => {
 		setIsFlipped(!isFlipped);
 	};
 
+	const handleResponse = (response) => {
+		onReviewChange(!response); // If known (true), don't need review (false)
+	};
+
+	const getDifficultyColor = () => {
+		switch (difficulty) {
+			case "Easy":
+				return "#4CAF50";
+			case "Medium":
+				return "#FFC107";
+			case "Hard":
+				return "#F44336";
+			default:
+				return "#9E9E9E";
+		}
+	};
+
 	return (
-		<div className="card" onClick={handleFlip}>
-			{isFlipped ? (
-				<div>{back}</div>
-			) : (
-				<div className="card-front">{front}</div>
-			)}
+		<div className="card-container">
+			<div
+				className={`card ${isFlipped ? "flipped" : ""}`}
+				onClick={handleFlip}
+			>
+				<div className="card-front">
+					<span
+						className="difficulty"
+						style={{ backgroundColor: getDifficultyColor() }}
+					>
+						{difficulty}
+					</span>
+					<h3 className="question">{question}</h3>
+					<p className="hint">Click to reveal answer</p>
+				</div>
+				<div className="card-back">
+					<h3 className="answer">{answer}</h3>
+					<div
+						className="response-buttons"
+						onClick={(e) => e.stopPropagation()}
+					>
+						<button
+							className="known-button"
+							onClick={() => handleResponse(true)}
+						>
+							I Know This
+						</button>
+						<button
+							className="unknown-button"
+							onClick={() => handleResponse(false)}
+						>
+							Needs Review
+						</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };
